@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Causten Round';
+  src: url('/fonts/Causten-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten Round';
+  src: url('/fonts/Causten-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten Round';
+  src: url('/fonts/Causten-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten Round';
+  src: url('/fonts/Causten-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten Round';
+  src: url('/fonts/Causten-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-display: swap;
+}
+
+:root {
+  --qb-navy: #0f1a2e;
+  --qb-white: #f8f9fb;
+  --qb-text: #c8d0dc;
+  --qb-muted: #6b7a90;
+  --qb-teal: #14b8a6;
+  --qb-border: rgba(255, 255, 255, 0.06);
+}
+
+@theme inline {
+  --color-background: var(--qb-navy);
+  --color-foreground: var(--qb-text);
+}
+
+body {
+  background: var(--qb-navy);
+  color: var(--qb-text);
+  font-family: 'Causten Round', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--qb-teal);
+  color: var(--qb-navy);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeIn 0.6s ease-out both;
+}
+
+.delay-1 { animation-delay: 0.05s; }
+.delay-2 { animation-delay: 0.1s; }
+.delay-3 { animation-delay: 0.18s; }
+.delay-4 { animation-delay: 0.26s; }
+.delay-5 { animation-delay: 0.34s; }
+.delay-6 { animation-delay: 0.42s; }
+
+.social-icon {
+  color: var(--qb-muted);
+  transition: color 0.2s;
+}
+.social-icon:hover {
+  color: var(--qb-white);
+}
