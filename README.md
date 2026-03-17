@@ -9,7 +9,6 @@ Website for QuillaBlocks — the Web3 community in Barranquilla, Colombia.
 - [Next.js](https://nextjs.org) 16
 - [Tailwind CSS](https://tailwindcss.com) 4
 - [React Icons](https://react-icons.github.io/react-icons/)
-- Causten Round font family
 
 ## Getting Started
 
