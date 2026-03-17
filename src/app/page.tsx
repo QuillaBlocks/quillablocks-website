@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FaGithub, FaInstagram, FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
+import { FaGithub, FaInstagram, FaXTwitter, FaLinkedinIn, FaArrowRight } from "react-icons/fa6";
 
 const socials = [
   { href: "https://github.com/QuillaBlocks", label: "GitHub", icon: FaGithub },
@@ -60,18 +60,7 @@ export default function Home() {
               }}
             >
               Únete a la comunidad
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+              <FaArrowRight size={14} />
             </a>
           </div>
 
