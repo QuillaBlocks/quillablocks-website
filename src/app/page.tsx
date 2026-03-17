@@ -27,7 +27,7 @@ export default function Home() {
 
           {/* Name */}
           <h1
-            className="animate-in delay-2 text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.1] mb-3"
+            className="animate-in delay-2 text-5xl sm:text-6xl font-extrabold tracking-tight leading-[1.1] mb-3"
             style={{ color: "var(--qb-white)" }}
           >
             QuillaBlocks
@@ -35,14 +35,14 @@ export default function Home() {
 
           {/* Tagline */}
           <p
-            className="animate-in delay-2 text-lg font-medium mb-5"
+            className="animate-in delay-2 text-xl font-medium mb-5"
             style={{ color: "var(--qb-muted)" }}
           >
             La comunidad Web3 de Barranquilla, Colombia
           </p>
 
           {/* Description */}
-          <p className="animate-in delay-3 text-lg mb-10 max-w-md">
+          <p className="animate-in delay-3 text-xl leading-relaxed mb-10 max-w-lg">
             Conectamos a entusiastas, desarrolladores y emprendedores para
             aprender, construir y crecer juntos en el ecosistema blockchain.
           </p>
@@ -53,7 +53,7 @@ export default function Home() {
               href="https://chat.whatsapp.com/EzY1yMk8SoS3qgRSKDuPON"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:brightness-110"
+              className="inline-flex items-center gap-2 text-base font-semibold px-7 py-3.5 rounded-full transition-all duration-200 hover:brightness-110"
               style={{
                 background: "var(--qb-teal)",
                 color: "var(--qb-navy)",
@@ -95,7 +95,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer
-        className="animate-in delay-6 px-6 py-8 text-xs flex items-center justify-between"
+        className="animate-in delay-6 px-6 py-8 text-sm flex items-center justify-between"
         style={{ color: "var(--qb-muted)", borderTop: "1px solid var(--qb-border)" }}
       >
         <p>© {new Date().toLocaleDateString("es-CO", { timeZone: "America/Bogota", year: "numeric" })} QuillaBlocks</p>
