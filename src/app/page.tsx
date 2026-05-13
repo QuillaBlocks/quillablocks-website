@@ -17,7 +17,7 @@ export default function Home() {
           {/* Logo */}
           <div className="animate-in delay-1 mb-10">
             <Image
-              src="/quillablocks-logo-cropped.png"
+              src="/quillablocks-logo.png"
               alt="QuillaBlocks"
               width={80}
               height={80}
