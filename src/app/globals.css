@@ -85,3 +85,27 @@ body {
 .social-icon:hover {
   color: var(--qb-white);
 }
+
+.step-block {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.step-block:hover {
+  filter: brightness(1.06);
+}
+.step-block:active {
+  transform: scale(0.99);
+}
+.step-block:focus-visible {
+  outline: 3px solid var(--qb-white);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-in {
+    animation: none;
+  }
+  .step-block,
+  .step-block * {
+    transition: none;
+  }
+}
