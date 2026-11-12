@@ -47,6 +47,18 @@
 @theme inline {
   --color-background: var(--qb-navy);
   --color-foreground: var(--qb-text);
+  --font-heading: 'Causten Round', var(--font-poppins), system-ui, sans-serif;
+  --font-body: var(--font-poppins), system-ui, sans-serif;
+}
+
+@theme {
+  --color-brand-yellow: #fed400;
+  --color-brand-orange: #ff8608;
+  --color-brand-red: #ed202a;
+  --color-brand-teal: #00a08d;
+  --color-brand-navy: #182946;
+  --color-brand-midnight: #121329;
+  --color-brand-mist: #eef0f4;
 }
 
 body {
