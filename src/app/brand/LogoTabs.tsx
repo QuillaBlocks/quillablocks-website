@@ -41,8 +41,9 @@ function variantsFor(layout: "horizontal" | "vertical", h: number): Variant[] {
     },
     {
       name: "Color con fondo",
-      note: "Ya incluye el fondo medianoche",
-      stage: MIDNIGHT,
+      note: "Con el fondo azul oscuro incluido, sin transparencia",
+      stage: MIST,
+      avatar: true,
       preview: `${p}-color-midnight-bg.png`,
       height: Math.round(h * 1.38),
       files: [{ label: "PNG", href: `${p}-color-midnight-bg.png` }],
@@ -101,7 +102,7 @@ const LOCKUPS: Lockup[] = [
   {
     id: "simbolo",
     label: "Símbolo",
-    summary: "La Q sola. Para avatares, favicons e íconos de app.",
+    summary: "La Q sola. Para fotos de perfil, favicons e íconos de app.",
     variants: [
       {
         name: "Color",
@@ -112,8 +113,8 @@ const LOCKUPS: Lockup[] = [
         files: [{ label: "PNG", href: `${s}-color.png` }],
       },
       {
-        name: "Avatar medianoche",
-        note: "Foto de perfil y favicon",
+        name: "Ícono, fondo oscuro",
+        note: "Foto de perfil, favicon o ícono de app",
         stage: MIST,
         avatar: true,
         preview: `${s}-midnight-bg.png`,
@@ -121,8 +122,8 @@ const LOCKUPS: Lockup[] = [
         files: [{ label: "PNG", href: `${s}-midnight-bg.png` }],
       },
       {
-        name: "Avatar blanco",
-        note: "Foto de perfil y favicon",
+        name: "Ícono, fondo blanco",
+        note: "Foto de perfil, favicon o ícono de app",
         stage: MIDNIGHT,
         avatar: true,
         preview: `${s}-white-bg.png`,
@@ -219,7 +220,7 @@ export function LogoTabs() {
                   src={v.preview}
                   alt={`Logo QuillaBlocks ${lockup.label.toLowerCase()}, ${v.name.toLowerCase()}`}
                   style={{ height: v.height }}
-                  className={`max-w-full object-contain ${v.avatar ? "rounded-[22%]" : ""}`}
+                  className={`max-w-full object-contain ${v.avatar ? "rounded-2xl" : ""}`}
                   loading="lazy"
                 />
               </div>

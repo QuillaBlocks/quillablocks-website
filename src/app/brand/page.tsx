@@ -35,22 +35,22 @@ const SECTIONS = [
 ];
 
 const COLORS = [
-  { name: "Amarillo", hex: "#fed400", rgb: "254 212 0", cmyk: "1 15 93 0", ink: "#121329", role: "Acento. El tono más luminoso: títulos y detalles sobre medianoche." },
+  { name: "Amarillo", hex: "#fed400", rgb: "254 212 0", cmyk: "1 15 93 0", ink: "#121329", role: "Acento. El tono más luminoso: títulos y detalles sobre azul oscuro." },
   { name: "Naranja", hex: "#ff8608", rgb: "255 134 8", cmyk: "0 57 94 0", ink: "#121329", role: "Acento. Bloques, fondos de piezas y llamados a la acción." },
   { name: "Rojo", hex: "#ed202a", rgb: "237 32 42", cmyk: "0 94 82 0", ink: "#ffffff", role: "Acento. Inicio del degradado; úsalo en superficies, no en texto pequeño." },
   { name: "Turquesa", hex: "#00a08d", rgb: "0 160 141", cmyk: "79 11 53 0", ink: "#ffffff", role: "Acento. Cierre del degradado; botones y elementos de apoyo." },
   { name: "Azul marino", hex: "#182946", rgb: "24 41 70", cmyk: "100 83 42 46", ink: "#ffffff", role: "El nombre del logo sobre fondos claros y el texto oscuro." },
-  { name: "Medianoche", hex: "#121329", rgb: "18 19 41", cmyk: "100 93 48 70", ink: "#ffffff", role: "El fondo oscuro de la marca. Úsalo en lugar del negro puro." },
+  { name: "Azul oscuro", hex: "#121329", rgb: "18 19 41", cmyk: "100 93 48 70", ink: "#ffffff", role: "El fondo oscuro de la marca. Úsalo en lugar del negro puro." },
 ];
 
 const GRADIENT = "linear-gradient(135deg, #ed202a 0%, #ff8608 35%, #fed400 65%, #00a08d 100%)";
 
 const PAIRS = [
-  { fg: "#ffffff", bg: "#121329", label: "Blanco sobre medianoche", ratio: "18,3:1" },
-  { fg: "#fed400", bg: "#121329", label: "Amarillo sobre medianoche", ratio: "12,7:1" },
+  { fg: "#ffffff", bg: "#121329", label: "Blanco sobre azul oscuro", ratio: "18,3:1" },
+  { fg: "#fed400", bg: "#121329", label: "Amarillo sobre azul oscuro", ratio: "12,7:1" },
   { fg: "#182946", bg: "#ffffff", label: "Azul marino sobre blanco", ratio: "14,5:1" },
-  { fg: "#121329", bg: "#fed400", label: "Medianoche sobre amarillo", ratio: "12,7:1" },
-  { fg: "#ff8608", bg: "#121329", label: "Naranja sobre medianoche", ratio: "7,5:1" },
+  { fg: "#121329", bg: "#fed400", label: "Azul oscuro sobre amarillo", ratio: "12,7:1" },
+  { fg: "#ff8608", bg: "#121329", label: "Naranja sobre azul oscuro", ratio: "7,5:1" },
   { fg: "#fed400", bg: "#ffffff", label: "Amarillo sobre blanco", ratio: "1,4:1", fail: true },
 ];
 
@@ -217,10 +217,10 @@ export default function BrandPage() {
         </section>
 
         <section id="color">
-          <Heading id="color" title="Caribe sobre medianoche">
+          <Heading id="color" title="Paleta de colores">
             <p>
-              Cuatro acentos vivos que vienen de nuestra identidad caribeña, sobre un fondo medianoche que mantiene
-              la marca seria y tecnológica. El medianoche domina; los acentos se usan para destacar. Haz clic en un
+              Cuatro colores vivos, inspirados en el Caribe, sobre un fondo azul oscuro que mantiene la marca seria y
+              tecnológica. El azul oscuro domina; los otros cuatro se usan para destacar. Haz clic en un
               color para copiar su HEX.
             </p>
           </Heading>
@@ -268,7 +268,7 @@ export default function BrandPage() {
             ))}
           </div>
           <p className={caption}>
-            Para texto normal se pide al menos 4,5:1. El rojo y el turquesa sobre medianoche funcionan en títulos
+            Para texto normal se pide al menos 4,5:1. El rojo y el turquesa sobre azul oscuro funcionan en títulos
             grandes, no en texto pequeño. Los tokens están en{" "}
             <a href="/brand/tokens/colors.css" download className="text-white underline underline-offset-3">
               colors.css
@@ -344,7 +344,7 @@ export default function BrandPage() {
           </div>
           <p className={caption}>
             Tampoco cambies el orden del símbolo y el nombre, ni la proporción entre ellos. Si el fondo se parece a
-            los colores del logo, usa la versión blanca, la negra o la que ya trae fondo medianoche.
+            los colores del logo, usa la versión blanca, la negra o la que ya trae fondo azul oscuro.
           </p>
         </section>
 
