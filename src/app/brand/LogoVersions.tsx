@@ -38,7 +38,7 @@ function variantsFor(layout: "horizontal" | "vertical", h: number): Variant[] {
     },
     {
       name: "Color con fondo",
-      note: "Fondo azul oscuro incluido",
+      note: "Con el fondo azul oscuro incluido",
       stage: MIST,
       avatar: true,
       preview: `${p}-color-midnight-bg.png`,
@@ -88,13 +88,13 @@ const LOCKUPS: Lockup[] = [
     id: "horizontal",
     label: "Horizontal",
     summary: "La versión principal. Úsala por defecto.",
-    variants: variantsFor("horizontal", 40),
+    variants: variantsFor("horizontal", 60),
   },
   {
     id: "vertical",
     label: "Vertical",
     summary: "Para espacios cuadrados o angostos.",
-    variants: variantsFor("vertical", 56),
+    variants: variantsFor("vertical", 84),
   },
   {
     id: "simbolo",
@@ -106,25 +106,25 @@ const LOCKUPS: Lockup[] = [
         note: "Fondo transparente",
         stage: MIDNIGHT,
         preview: `${s}-color.png`,
-        height: 52,
+        height: 80,
         files: [{ label: "PNG", href: `${s}-color.png` }],
       },
       {
         name: "Ícono, fondo oscuro",
-        note: "Perfil, favicon o app",
+        note: "Foto de perfil, favicon o ícono de app",
         stage: MIST,
         avatar: true,
         preview: `${s}-midnight-bg.png`,
-        height: 76,
+        height: 116,
         files: [{ label: "PNG", href: `${s}-midnight-bg.png` }],
       },
       {
         name: "Ícono, fondo blanco",
-        note: "Perfil, favicon o app",
+        note: "Foto de perfil, favicon o ícono de app",
         stage: MIDNIGHT,
         avatar: true,
         preview: `${s}-white-bg.png`,
-        height: 76,
+        height: 116,
         files: [{ label: "PNG", href: `${s}-white-bg.png` }],
       },
       {
@@ -132,7 +132,7 @@ const LOCKUPS: Lockup[] = [
         note: "Una tinta, sobre oscuro",
         stage: MIDNIGHT,
         preview: `${s}-white.png`,
-        height: 52,
+        height: 80,
         files: [
           { label: "PNG", href: `${s}-white.png` },
           { label: "SVG", href: `${s}-white.svg` },
@@ -143,7 +143,7 @@ const LOCKUPS: Lockup[] = [
         note: "Una tinta, sobre claro",
         stage: WHITE,
         preview: `${s}-black.png`,
-        height: 52,
+        height: 80,
         files: [
           { label: "PNG", href: `${s}-black.png` },
           { label: "SVG", href: `${s}-black.svg` },
@@ -154,7 +154,7 @@ const LOCKUPS: Lockup[] = [
         note: "Impresión en blanco y negro",
         stage: MIST,
         preview: `${s}-grayscale.png`,
-        height: 52,
+        height: 80,
         files: [
           { label: "PNG", href: `${s}-grayscale.png` },
           { label: "SVG", href: `${s}-gray.svg` },
@@ -169,18 +169,18 @@ export function LogoVersions() {
     <div className="space-y-12">
       {LOCKUPS.map((lockup) => (
         <div key={lockup.id} id={`logo-${lockup.id}`} className="scroll-mt-6">
-          <div className="mb-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <div className="mb-5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
             <h3 className="font-heading text-xl font-bold text-white">{lockup.label}</h3>
             <p className="text-[15px] text-[var(--qb-muted)]">{lockup.summary}</p>
           </div>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {lockup.variants.map((v) => (
               <figure
                 key={v.preview}
-                className="flex flex-col overflow-hidden rounded-[18px] rounded-bl-none bg-white/[0.04] ring-1 ring-white/[0.07]"
+                className="flex flex-col overflow-hidden rounded-[20px] rounded-bl-none bg-white/[0.04] ring-1 ring-white/[0.07]"
               >
                 <div
-                  className="flex h-32 items-center justify-center overflow-hidden px-4"
+                  className="flex h-48 items-center justify-center overflow-hidden px-6"
                   style={{ background: v.stage }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -188,16 +188,16 @@ export function LogoVersions() {
                     src={v.preview}
                     alt={`Logo QuillaBlocks ${lockup.label.toLowerCase()}, ${v.name.toLowerCase()}`}
                     style={{ height: v.height }}
-                    className={`max-w-full object-contain ${v.avatar ? "rounded-xl" : ""}`}
+                    className={`max-w-full object-contain ${v.avatar ? "rounded-2xl" : ""}`}
                     loading="lazy"
                   />
                 </div>
-                <figcaption className="flex flex-1 flex-col gap-3 p-3">
-                  <span>
-                    <span className="block text-sm font-bold text-white">{v.name}</span>
-                    <span className="block text-[12px] leading-snug text-[var(--qb-muted)]">{v.note}</span>
+                <figcaption className="flex flex-1 items-center justify-between gap-3 p-4">
+                  <span className="min-w-0">
+                    <span className="block text-[15px] font-bold text-white">{v.name}</span>
+                    <span className="block text-[13px] leading-snug text-[var(--qb-muted)]">{v.note}</span>
                   </span>
-                  <span className="mt-auto flex gap-1.5">
+                  <span className="flex shrink-0 gap-1.5">
                     {v.files.map((f) => (
                       <a
                         key={f.href}
