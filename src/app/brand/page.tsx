@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Poppins } from "next/font/google";
 import { FaCheck, FaXmark } from "react-icons/fa6";
 import { CopyButton, Swatch } from "./CopyButton";
-import { LogoTabs } from "./LogoTabs";
+import { LogoVersions } from "./LogoVersions";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -157,14 +157,14 @@ export default function BrandPage() {
           <Heading id="logo" title="Un símbolo y un nombre">
             <p>
               El logo es una Q construida con un bloque: Quilla por Barranquilla, el bloque por blockchain y la
-              ventana cuadrada como nuestra ventana al mundo. El símbolo y el nombre se pueden usar juntos o el
-              símbolo solo.
+              ventana cuadrada como nuestra ventana al mundo. Hay tres versiones: horizontal, vertical y
+              el símbolo solo, cada una en color, blanco, negro y grises.
             </p>
           </Heading>
-          <LogoTabs />
+          <LogoVersions />
           <p className={caption}>
-            Usa la versión horizontal por defecto y la vertical en espacios cuadrados. Para piezas a una sola tinta,
-            descarga el SVG en blanco, negro o gris. Las versiones a color solo existen en PNG.
+            Para piezas a una sola tinta, descarga el SVG en blanco, negro o gris. Las versiones a color solo existen
+            en PNG.
           </p>
         </section>
 
