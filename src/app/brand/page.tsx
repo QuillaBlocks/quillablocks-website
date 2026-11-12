@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Poppins } from "next/font/google";
-import { FaArrowDown, FaArrowUpRightFromSquare, FaCheck, FaXmark } from "react-icons/fa6";
+import { FaCheck, FaXmark } from "react-icons/fa6";
 import { CopyButton, Swatch } from "./CopyButton";
 import { LogoTabs } from "./LogoTabs";
 
@@ -16,11 +16,11 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Kit de marca — QuillaBlocks",
   description:
-    "Logos, colores, tipografías y piezas gráficas de QuillaBlocks para prensa, aliados y la comunidad.",
+    "Logos, colores y textos de QuillaBlocks para prensa, aliados y la comunidad.",
   alternates: { canonical: "/brand" },
   openGraph: {
     title: "Kit de marca — QuillaBlocks",
-    description: "Logos, colores, tipografías y piezas gráficas de QuillaBlocks.",
+    description: "Logos, colores y textos de QuillaBlocks.",
     url: "https://quillablocks.org/brand",
   },
 };
@@ -29,9 +29,6 @@ const SECTIONS = [
   { id: "logo", label: "Logo" },
   { id: "espacio", label: "Espacio y tamaño" },
   { id: "color", label: "Color" },
-  { id: "tipografia", label: "Tipografía" },
-  { id: "graficos", label: "Elementos gráficos" },
-  { id: "redes", label: "Redes sociales" },
   { id: "descripcion", label: "Cómo describirnos" },
   { id: "usos", label: "Usos incorrectos" },
   { id: "reglas", label: "Reglas de uso" },
@@ -55,60 +52,6 @@ const PAIRS = [
   { fg: "#121329", bg: "#fed400", label: "Medianoche sobre amarillo", ratio: "12,7:1" },
   { fg: "#ff8608", bg: "#121329", label: "Naranja sobre medianoche", ratio: "7,5:1" },
   { fg: "#fed400", bg: "#ffffff", label: "Amarillo sobre blanco", ratio: "1,4:1", fail: true },
-];
-
-const GRAPHICS = [
-  {
-    name: "Bloques",
-    note: "La forma base del símbolo, en los cuatro acentos.",
-    preview: ["red", "orange", "yellow", "teal"].map((c) => `/brand/graphics/block-${c}.png`),
-    files: [
-      { label: "Rojo", href: "/brand/graphics/block-red.png" },
-      { label: "Naranja", href: "/brand/graphics/block-orange.png" },
-      { label: "Amarillo", href: "/brand/graphics/block-yellow.png" },
-      { label: "Turquesa", href: "/brand/graphics/block-teal.png" },
-    ],
-  },
-  {
-    name: "Chevron",
-    note: "Cuatro bloques superpuestos. Para bordes de banners y tarjetas.",
-    preview: ["/brand/graphics/blocks-chevron-horizontal.png"],
-    files: [{ label: "PNG", href: "/brand/graphics/blocks-chevron-horizontal.png" }],
-  },
-  {
-    name: "Pila",
-    note: "Bloques apilados con desplazamiento.",
-    preview: ["/brand/graphics/blocks-stack-vertical.png"],
-    files: [{ label: "PNG", href: "/brand/graphics/blocks-stack-vertical.png" }],
-  },
-  {
-    name: "Curvas",
-    note: "Cintas con el degradado de marca.",
-    preview: ["/brand/graphics/curve-1.png", "/brand/graphics/curve-2.png"],
-    files: [
-      { label: "Curva 1", href: "/brand/graphics/curve-1.png" },
-      { label: "Curva 2", href: "/brand/graphics/curve-2.png" },
-    ],
-  },
-];
-
-const TEXTURES = [
-  { name: "Textura oscura", note: "La textura corporativa, sobre medianoche. 1921 × 1081.", href: "/brand/graphics/texture-dark.png", stage: "#121329" },
-  { name: "Textura clara", note: "La misma trama en tonos pálidos, para fondos claros. 1921 × 1081.", href: "/brand/graphics/texture-light.png", stage: "#ffffff" },
-];
-
-const BANNERS = [
-  { name: "Portada LinkedIn", size: "1584 × 396", href: "/brand/social/banner-web3-community-1584x396-orange.png" },
-  { name: "Portada ancha, título amarillo", size: "3245 × 812", href: "/brand/social/banner-web3-community-3245x812-yellow-title.png" },
-  { name: "Portada ancha, título blanco", size: "3245 × 812", href: "/brand/social/banner-web3-community-3245x812-white-title.png" },
-  { name: "Portada ancha, título turquesa", size: "3245 × 812", href: "/brand/social/banner-web3-community-3245x812-teal-title.png" },
-];
-
-const SOCIAL_RULES = [
-  "Que la paleta domine la pieza. El degradado del logo también se puede usar.",
-  "Incluye siempre el logo en la versión adecuada al fondo.",
-  "El logo va arriba o abajo de la pieza, centrado.",
-  "Busca contraste en cada publicación.",
 ];
 
 const COPY = [
@@ -163,8 +106,6 @@ function Heading({ id, title, children }: { id: string; title: string; children?
 }
 
 const card = "overflow-hidden rounded-[20px] rounded-bl-none bg-white/[0.04] ring-1 ring-white/[0.07]";
-const chip =
-  "inline-flex items-center gap-1 rounded-full bg-white/[0.07] px-2.5 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-white/[0.14] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
 const caption = "mt-5 max-w-2xl text-[15px] leading-relaxed text-[var(--qb-muted)]";
 
 // Display height of the trimmed horizontal PNG. The art fills 234 of its 288px,
@@ -190,7 +131,7 @@ export default function BrandPage() {
           Kit de marca
         </h1>
         <p className="animate-in delay-3 max-w-2xl text-lg leading-relaxed">
-          Logos, colores, tipografías y piezas gráficas de QuillaBlocks. Úsalos libremente para hablar de
+          Logos, colores y textos de QuillaBlocks. Úsalos libremente para hablar de
           nosotros; las reglas están al final de la página.
         </p>
         <div aria-hidden className="animate-in delay-5 mt-14 h-2 max-w-md rounded-full rounded-bl-none" style={{ background: GRADIENT }} />
@@ -338,140 +279,6 @@ export default function BrandPage() {
             </a>
             .
           </p>
-        </section>
-
-        <section id="tipografia">
-          <Heading id="tipografia" title="Dos familias" />
-          <div className="grid gap-4 lg:grid-cols-2">
-            <div className={`${card} p-6 sm:p-8`}>
-              <p className="mb-1 text-sm font-semibold text-brand-yellow">Títulos</p>
-              <p className="font-heading mb-6 text-2xl font-bold text-white">Causten Round</p>
-              <p className="font-heading mb-6 text-5xl font-extrabold leading-none text-white sm:text-6xl">
-                BAQ + TECH = QB
-              </p>
-              <p className="font-heading mb-6 text-xl leading-snug text-white">
-                Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Ññ Oo Pp Qq 0123456789
-              </p>
-              <p className="text-sm leading-relaxed text-[var(--qb-muted)]">
-                Redondeada, cercana y moderna. Úsala en Bold o ExtraBold. Es una fuente comercial, por eso no está
-                en el kit; si no tienes licencia, usa Poppins Bold en su lugar.
-              </p>
-            </div>
-            <div className={`${card} p-6 sm:p-8`} style={{ fontFamily: "var(--font-poppins)" }}>
-              <p className="mb-1 text-sm font-semibold text-brand-yellow">Texto</p>
-              <p className="mb-6 text-2xl font-semibold text-white">Poppins</p>
-              <p className="mb-6 text-5xl font-bold leading-none text-white sm:text-6xl">Web3 Caribe</p>
-              <p className="mb-6 text-base leading-relaxed text-white">
-                Conectamos a estudiantes, desarrolladores y emprendedores de Barranquilla con el ecosistema
-                blockchain global.
-              </p>
-              <p className="text-sm leading-relaxed text-[var(--qb-muted)]">
-                Trazos firmes que transmiten confianza. Úsala en Regular y Medium para párrafos. Es gratuita bajo la
-                licencia SIL Open Font.{" "}
-                <a
-                  href="https://fonts.google.com/specimen/Poppins"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-white underline underline-offset-3"
-                >
-                  Google Fonts
-                  <FaArrowUpRightFromSquare size={10} aria-hidden />
-                </a>
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section id="graficos">
-          <Heading id="graficos" title="Hechos de bloques">
-            <p>
-              Formas que salen del símbolo, para acompañar al logo en banners, presentaciones y piezas impresas.
-              Todas en PNG con fondo transparente.
-            </p>
-          </Heading>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {GRAPHICS.map((g) => (
-              <figure key={g.name} className={card}>
-                <div className="flex h-44 items-center justify-center gap-2 bg-brand-midnight px-5">
-                  {g.preview.map((src) => (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      key={src}
-                      src={src}
-                      alt=""
-                      loading="lazy"
-                      className="min-w-0 object-contain"
-                      style={{ height: g.preview.length > 2 ? 44 : g.preview.length > 1 ? 72 : 112 }}
-                    />
-                  ))}
-                </div>
-                <figcaption className="p-4">
-                  <span className="block text-[15px] font-bold text-white">{g.name}</span>
-                  <span className="mb-3 block text-[13px] leading-snug text-[var(--qb-muted)]">{g.note}</span>
-                  <span className="flex flex-wrap gap-1.5">
-                    {g.files.map((f) => (
-                      <a key={f.href} href={f.href} download className={chip}>
-                        {f.label}
-                        <FaArrowDown size={9} aria-hidden />
-                      </a>
-                    ))}
-                  </span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            {TEXTURES.map((t) => (
-              <figure key={t.name} className={card}>
-                <div
-                  className="h-44 bg-cover bg-center"
-                  style={{ backgroundColor: t.stage, backgroundImage: `url(${t.href})` }}
-                  role="img"
-                  aria-label={t.name}
-                />
-                <figcaption className="flex items-center justify-between gap-3 p-4">
-                  <span>
-                    <span className="block text-[15px] font-bold text-white">{t.name}</span>
-                    <span className="block text-[13px] leading-snug text-[var(--qb-muted)]">{t.note}</span>
-                  </span>
-                  <a href={t.href} download className={chip}>
-                    PNG
-                    <FaArrowDown size={9} aria-hidden />
-                  </a>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </section>
-
-        <section id="redes">
-          <Heading id="redes" title="Portadas listas para usar" />
-          <div className="grid gap-4 lg:grid-cols-2">
-            {BANNERS.map((b) => (
-              <figure key={b.href} className={card}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={b.href} alt={b.name} loading="lazy" className="block w-full" />
-                <figcaption className="flex items-center justify-between gap-3 p-4">
-                  <span>
-                    <span className="block text-[15px] font-bold text-white">{b.name}</span>
-                    <span className="block font-mono text-[12px] text-[var(--qb-muted)]">{b.size}</span>
-                  </span>
-                  <a href={b.href} download className={chip}>
-                    PNG
-                    <FaArrowDown size={9} aria-hidden />
-                  </a>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-          <ul className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-2">
-            {SOCIAL_RULES.map((r) => (
-              <li key={r} className="flex gap-3 text-[15px] leading-snug">
-                <span aria-hidden className="mt-[0.45em] h-2.5 w-2.5 shrink-0 rounded-[3px] rounded-bl-none bg-brand-teal" />
-                {r}
-              </li>
-            ))}
-          </ul>
         </section>
 
         <section id="descripcion">
