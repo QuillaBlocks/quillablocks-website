@@ -1,0 +1,16 @@
+/* QuillaBlocks brand tokens */
+:root {
+  --qb-yellow: #fed400;
+  --qb-orange: #ff8608;
+  --qb-red: #ed202a;
+  --qb-teal: #00a08d;
+  --qb-navy: #182946;
+  --qb-midnight: #121329;
+  --qb-white: #ffffff;
+
+  /* Symbol gradient (red -> orange -> yellow -> teal) */
+  --qb-gradient: linear-gradient(135deg, #ed202a 0%, #ff8608 35%, #fed400 65%, #00a08d 100%);
+
+  --qb-font-heading: "Causten Round", "Poppins", sans-serif;
+  --qb-font-body: "Poppins", sans-serif;
+}

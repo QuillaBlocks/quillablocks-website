@@ -1,0 +1,65 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "QuillaBlocks brand palette.",
+  "color": {
+    "yellow": {
+      "$type": "color",
+      "$value": "#fed400",
+      "$description": "Primary accent. RGB 254 212 0. CMYK 1 15 93 0."
+    },
+    "orange": {
+      "$type": "color",
+      "$value": "#ff8608",
+      "$description": "Primary accent. RGB 255 134 8. CMYK 0 57 94 0."
+    },
+    "red": {
+      "$type": "color",
+      "$value": "#ed202a",
+      "$description": "Primary accent. RGB 237 32 42. CMYK 0 94 82 0."
+    },
+    "teal": {
+      "$type": "color",
+      "$value": "#00a08d",
+      "$description": "Primary accent. RGB 0 160 141. CMYK 79 11 53 0."
+    },
+    "navy": {
+      "$type": "color",
+      "$value": "#182946",
+      "$description": "Wordmark color on light backgrounds. RGB 24 41 70. CMYK 100 83 42 46."
+    },
+    "midnight": {
+      "$type": "color",
+      "$value": "#121329",
+      "$description": "Default dark background (logos, banners, business card). RGB 18 19 41. CMYK 100 93 48 70."
+    },
+    "white": {
+      "$type": "color",
+      "$value": "#ffffff",
+      "$description": "Wordmark color on dark backgrounds."
+    }
+  },
+  "gradient": {
+    "symbol": {
+      "$type": "gradient",
+      "$description": "Gradient used in the Q symbol and in graphic elements: red -> orange -> yellow -> teal, roughly top-left to bottom-right.",
+      "$value": [
+        { "color": "{color.red}", "position": 0 },
+        { "color": "{color.orange}", "position": 0.35 },
+        { "color": "{color.yellow}", "position": 0.65 },
+        { "color": "{color.teal}", "position": 1 }
+      ]
+    }
+  },
+  "font": {
+    "heading": {
+      "$type": "fontFamily",
+      "$value": ["Causten Round", "Poppins", "sans-serif"],
+      "$description": "Titles. Files in brand/fonts/causten-round (see license note in brand/README.md)."
+    },
+    "body": {
+      "$type": "fontFamily",
+      "$value": ["Poppins", "sans-serif"],
+      "$description": "Body text. Files in brand/fonts/poppins (SIL OFL 1.1)."
+    }
+  }
+}
