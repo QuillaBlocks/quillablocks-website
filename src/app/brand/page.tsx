@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Poppins } from "next/font/google";
-import { FaCheck, FaXmark } from "react-icons/fa6";
+import { FaArrowDown, FaCheck, FaXmark } from "react-icons/fa6";
 import { CopyButton, Swatch } from "./CopyButton";
-import { LogoVersions } from "./LogoVersions";
+import { LogoExplorer } from "./LogoExplorer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -118,7 +118,7 @@ const CS_PAD = CS_X - Math.round((CS_H * 29) / 288);
 
 export default function BrandPage() {
   return (
-    <div className={`${poppins.variable} font-body min-h-screen`}>
+    <div className={`${poppins.variable} font-body min-h-screen bg-[#0a0a0d]`}>
       <header className="mx-auto max-w-6xl px-6 pt-8">
         <Link href="/" aria-label="QuillaBlocks, inicio" className="inline-block">
           <Image src="/quillablocks-logo.png" alt="" width={44} height={44} priority />
@@ -134,17 +134,24 @@ export default function BrandPage() {
           Logos, colores y textos de QuillaBlocks. Úsalos libremente para hablar de
           nosotros; las reglas están al final de la página.
         </p>
-        <div aria-hidden className="animate-in delay-5 mt-14 h-2 max-w-md rounded-full rounded-bl-none" style={{ background: GRADIENT }} />
-        <nav aria-label="Secciones" className="animate-in delay-6 mt-10">
-          <ol className="grid grid-cols-2 gap-x-6 sm:grid-cols-3 lg:grid-cols-5">
+        <nav aria-label="Secciones de la página" className="animate-in delay-5 mt-12">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.08em] text-[var(--qb-muted)]">Ir a</p>
+          <ol className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
             {SECTIONS.map((s) => (
               <li key={s.id}>
                 <a
                   href={`#${s.id}`}
-                  className="flex items-baseline gap-3 border-t border-[var(--qb-border)] py-3 text-[15px] font-medium transition-colors hover:text-white"
+                  className="group flex h-full flex-col justify-between gap-6 rounded-2xl rounded-bl-none bg-white/[0.04] p-4 ring-1 ring-white/[0.08] transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/[0.08] hover:ring-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
-                  <span className="font-mono text-xs text-brand-yellow">{num(s.id)}</span>
-                  {s.label}
+                  <span className="flex items-center justify-between">
+                    <span className="font-mono text-xs text-brand-yellow">{num(s.id)}</span>
+                    <FaArrowDown
+                      size={11}
+                      aria-hidden
+                      className="text-[var(--qb-muted)] transition-all duration-200 group-hover:translate-y-0.5 group-hover:text-white"
+                    />
+                  </span>
+                  <span className="text-[15px] font-semibold leading-tight text-white">{s.label}</span>
                 </a>
               </li>
             ))}
@@ -154,14 +161,8 @@ export default function BrandPage() {
 
       <main className="mx-auto max-w-6xl px-6 [&>section]:scroll-mt-6 [&>section]:border-t [&>section]:border-[var(--qb-border)] [&>section]:py-20">
         <section id="logo">
-          <Heading id="logo" title="Un símbolo y un nombre">
-            <p>
-              El logo es una Q construida con un bloque: Quilla por Barranquilla, el bloque por blockchain y la
-              ventana cuadrada como nuestra ventana al mundo. Hay tres versiones: horizontal, vertical y
-              el símbolo solo, cada una en color, blanco, negro y grises.
-            </p>
-          </Heading>
-          <LogoVersions />
+          <Heading id="logo" title="Descarga el logo" />
+          <LogoExplorer />
           <p className={caption}>
             Para piezas a una sola tinta, descarga el SVG en blanco, negro o gris. Las versiones a color solo existen
             en PNG.
@@ -171,12 +172,12 @@ export default function BrandPage() {
         <section id="espacio">
           <Heading id="espacio" title="Dale aire">
             <p>
-              Alrededor del logo deja libre un espacio igual a la altura del cuadrado interior del símbolo. Nada
+              Alrededor del logo deja libre un espacio igual a la altura del cuadrado interior del isotipo. Nada
               entra en ese margen: ni textos, ni otros logos, ni el borde de la pieza.
             </p>
           </Heading>
           <div className="grid gap-4 lg:grid-cols-[3fr_2fr]">
-            <div className={`${card} flex items-center justify-center bg-brand-midnight px-6 py-14`}>
+            <div className={`${card} flex items-center justify-center px-6 py-14`} style={{ background: "#121329" }}>
               <div className="relative border border-dashed border-white/40" style={{ padding: CS_PAD }}>
                 {(["left-0 top-0", "right-0 top-0", "left-0 bottom-0", "right-0 bottom-0"] as const).map((pos) => (
                   <span
@@ -203,8 +204,8 @@ export default function BrandPage() {
                 {[
                   ["Horizontal, impreso", "2 a 2,5 cm de ancho"],
                   ["Vertical, impreso", "1 a 1,5 cm de ancho"],
-                  ["En pantalla", "Que el nombre se lea con claridad. Si no cabe, usa el símbolo solo."],
-                  ["Símbolo", "Funciona hasta tamaño favicon"],
+                  ["En pantalla", "Que el nombre se lea con claridad. Si no cabe, usa el isotipo solo."],
+                  ["Isotipo", "Funciona hasta tamaño favicon"],
                 ].map(([k, v]) => (
                   <div key={k} className="border-t border-[var(--qb-border)] pt-3">
                     <dt className="text-[var(--qb-muted)]">{k}</dt>
@@ -343,7 +344,7 @@ export default function BrandPage() {
             ))}
           </div>
           <p className={caption}>
-            Tampoco cambies el orden del símbolo y el nombre, ni la proporción entre ellos. Si el fondo se parece a
+            Tampoco cambies el orden del isotipo y el nombre, ni la proporción entre ellos. Si el fondo se parece a
             los colores del logo, usa la versión blanca, la negra o la que ya trae fondo azul oscuro.
           </p>
         </section>
